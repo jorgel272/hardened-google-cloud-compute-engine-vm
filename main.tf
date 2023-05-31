@@ -37,10 +37,10 @@ resource "google_service_account_iam_member" "service_account_user_awesomename-s
 }
 
 ###############################################################################
-# Deploy Compute Instance reserve internal and public IPv4 addresses
+# Deploy Compute Instance with static internal and public IPv4 address
 ###############################################################################
 
-# Static Public IPv4 address
+# Static Public IPv4 address or Compute Engine Instance
 resource "google_compute_address" "public_static_ip" {
   name   = "ce-awesomename-external-ip"
   region = var.gcp_region
@@ -59,7 +59,7 @@ resource "google_compute_instance" "awesomename" {
   name                      = var.compute_engine_instance_name
   zone                      = var.gcp_zone_primary
   machine_type              = "e2-highmem-8"
-  tags                      = ["http", "http-server", "https", "ping"]
+  tags                      = ["http", "https", "ping"]
   project                   = var.gcp_project_id
   can_ip_forward            = false
   allow_stopping_for_update = true
