@@ -1,2 +1,2 @@
 # compute-engine-secure-vm
-Create Compute Engine instances with security in mind.
+Deploy Compute Engine instances with security in mind with Terraform.
