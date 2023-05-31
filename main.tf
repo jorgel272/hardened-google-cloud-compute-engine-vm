@@ -18,6 +18,24 @@ resource "google_project_service" "service_networking" {
   disable_on_destroy         = false
 }
 
+########################################################################################
+# Create local Custom VPC Network and VPC Subnet
+########################################################################################
+
+resource "google_compute_network" "vpc_network" {
+  name                            = var.local_vpc_awesomename_network_name
+  project                         = var.gcp_project_id
+  delete_default_routes_on_create = false
+  auto_create_subnetworks         = false
+}
+
+resource "google_compute_subnetwork" "vpc_network" {
+  name          = var.local_vpc_awesomename_subnet_name
+  ip_cidr_range = "10.1.20.0/24"
+  region        = var.gcp_region
+  network       = google_compute_network.vpc_network.id
+}
+
 ###############################################################################
 # Create Service Account for Compute Engine Instance 
 ###############################################################################
