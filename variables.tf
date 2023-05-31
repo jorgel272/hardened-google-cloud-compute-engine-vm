@@ -4,7 +4,7 @@
 
 variable "gcp_project_id" {
   type    = string
-  default = "NameOfYourGoogleCloudProject"
+  default = "name-of-your-google-cloud-project"
 }
 
 variable "gcp_region" {
@@ -15,7 +15,7 @@ variable "gcp_region" {
 
 variable "gcp_zone_primary" {
   description = "GCP Primary region, zone in Netherlands"
-  default     = "europe-west4-d"
+  default     = "europe-west4-c"
   type        = string
 }
 
@@ -26,7 +26,7 @@ variable "gcp_zone_primary" {
 variable "compute_engine_instance_name" {
   description = "Name of the Compute Engine Instance"
   type        = string
-  default     = "AwesomeNameForYourComputeEngine-instance"
+  default     = "awesome-name-for-your-compute-engine-instance"
 }
 
 variable "sa-ce-scopes" {
@@ -47,13 +47,13 @@ variable "sa-ce-scopes" {
 variable "local_vpc_AweSomeName_network_name" {
   description = "Name of the local created VPC Network"
   type        = string
-  default     = "local-vpc-AweSomeName"
+  default     = "local-vpc-awesomename"
 }
 
 variable "local_vpc_AweSomeName_subnet_name" {
   description = "Name of the local created subnet."
   type        = string
-  default     = "AweSomeName-CountryCodeRegion" #CustomerName-NL
+  default     = "awesomename-country-code" #CustomerName-NL
 }
 
 variable "private_static_ip" {
