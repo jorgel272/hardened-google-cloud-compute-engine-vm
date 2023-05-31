@@ -44,13 +44,13 @@ variable "sa-ce-scopes" {
   ]
 }
 
-variable "local_vpc_AweSomeName_network_name" {
+variable "local_vpc_awesomename_network_name" {
   description = "Name of the local created VPC Network"
   type        = string
   default     = "local-vpc-awesomename"
 }
 
-variable "local_vpc_AweSomeName_subnet_name" {
+variable "local_vpc_awesomename_subnet_name" {
   description = "Name of the local created subnet."
   type        = string
   default     = "awesomename-country-code" #CustomerName-NL
