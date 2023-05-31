@@ -42,7 +42,7 @@ resource "google_service_account_iam_member" "service_account_user_awesomefuncti
 
 # Static Public IPv4 address
 resource "google_compute_address" "public_static_ip" {
-  name   = "ce-AweSomeName-external-ip2"
+  name   = "ce-awesomename-external-ip"
   region = var.gcp_region
 }
 
@@ -50,12 +50,12 @@ resource "google_compute_address" "public_static_ip" {
 resource "google_compute_address" "private_static_ip" {
   address_type = "INTERNAL"
   region       = var.gcp_region
-  name         = "ce-AweSomeName-internal-ip2"
-  subnetwork   = var.local_vpc_AweSomeName_subnet_name
+  name         = "ce-awesomename-internal-ip"
+  subnetwork   = var.local_vpc_awesomename_subnet_name
   address      = "10.1.20.21"
 }
 
-resource "google_compute_instance" "AweSomeName" {
+resource "google_compute_instance" "awesomename" {
   name                      = var.compute_engine_instance_name
   zone                      = "europe-west4-b"
   machine_type              = "e2-highmem-8"
@@ -69,7 +69,7 @@ resource "google_compute_instance" "AweSomeName" {
   network_interface {
     network    = google_compute_network.vpc_network.id
     network_ip = google_compute_address.private_static_ip.address
-    subnetwork = var.local_vpc_AweSomeName_subnet_name
+    subnetwork = var.local_vpc_awesomename_subnet_name
 
     access_config {
       nat_ip = google_compute_address.public_static_ip.address
@@ -111,7 +111,7 @@ resource "google_compute_instance" "AweSomeName" {
 
 resource "google_compute_firewall" "ingress-http-traffic" {
   name    = "allow-ingress-http"
-  network = var.local_vpc_AweSomeName_network_name
+  network = var.local_vpc_awesomename_network_name
 
   direction = "INGRESS"
   allow {
@@ -128,7 +128,7 @@ resource "google_compute_firewall" "ingress-http-traffic" {
 
 resource "google_compute_firewall" "ingress-https-traffic" {
   name    = "allow-ingress-https"
-  network = var.local_vpc_AweSomeName_network_name
+  network = var.local_vpc_awesomename_network_name
 
   direction = "INGRESS"
   allow {
@@ -145,7 +145,7 @@ resource "google_compute_firewall" "ingress-https-traffic" {
 
 resource "google_compute_firewall" "ingress-ping-traffic" {
   name    = "allow-ingress-ping"
-  network = var.local_vpc_AweSomeName_network_name
+  network = var.local_vpc_awesomename_network_name
 
   direction = "INGRESS"
   allow {
@@ -159,9 +159,9 @@ resource "google_compute_firewall" "ingress-ping-traffic" {
 
 # FW Rule 4  - Allow IAP SSH traffic
 
-resource "google_compute_firewall" "ingress-AweSomeName-ssh-traffic" {
-  name    = "allow-ingress-AweSomeName-ssh"
-  network = var.local_vpc_AweSomeName_network_name
+resource "google_compute_firewall" "ingress-awesomename-ssh-traffic" {
+  name    = "allow-ingress-awesomename-ssh"
+  network = var.local_vpc_awesomename_network_name
 
   direction = "INGRESS"
   priority  = "65534"
