@@ -23,16 +23,16 @@ resource "google_project_service" "service_networking" {
 ###############################################################################
 
 #Create Service Account. Defined project in resource.
-resource "google_service_account" "awesomefunctionalname-sa-ce-environment" {
+resource "google_service_account" "awesomename-sa-ce-env" {
   project      = var.gcp_project_id
   display_name = "Compute Engine Service Account"
-  account_id   = "awesomefunctionalname-sa-ce-environment"
+  account_id   = "awesomename-sa-ce-env"
 }
 
 #Add role IAM ServiceAccountUser to created Service Account.
-resource "google_service_account_iam_member" "service_account_user_awesomefunctionalname-sa-ce-environment" {
-  service_account_id = google_service_account.awesomefunctionalname-sa-ce-environment.name
-  member             = format("serviceAccount:%s", google_service_account.awesomefunctionalname-sa-ce-environment.email)
+resource "google_service_account_iam_member" "service_account_user_awesomename-sa-ce-env" {
+  service_account_id = google_service_account.awesomename-sa-ce-env.name
+  member             = format("serviceAccount:%s", google_service_account.awesomename-sa-ce-env.email)
   role               = "roles/iam.serviceAccountUser"
 }
 
@@ -92,7 +92,7 @@ resource "google_compute_instance" "awesomename" {
 
   #Define API scopes for GCE Service Account.
   service_account {
-    email  = google_service_account.awesomefunctionalname-sa-ce-environment.email
+    email  = google_service_account.awesomename-sa-ce-env.email
     scopes = var.sa-ce-scopes
   }
 
