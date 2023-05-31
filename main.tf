@@ -57,7 +57,7 @@ resource "google_compute_address" "private_static_ip" {
 
 resource "google_compute_instance" "awesomename" {
   name                      = var.compute_engine_instance_name
-  zone                      = "europe-west4-b"
+  zone                      = var.gcp_zone_primary
   machine_type              = "e2-highmem-8"
   tags                      = ["http", "http-server", "https", "ping"]
   project                   = var.gcp_project_id
