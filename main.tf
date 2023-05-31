@@ -116,7 +116,7 @@ resource "google_compute_instance" "awesomename" {
 
   metadata = {
     block-project-ssh-keys = true
-    enable-os-login        = false
+    enable-os-login        = true
     serial-port-enable     = false
   }
 }
