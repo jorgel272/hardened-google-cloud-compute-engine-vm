@@ -11,9 +11,10 @@ The direct attached static IPv4 address is for testing purpose. It's recommend t
 5. Assign minimum required Scope to Service Account
 6. Reserve static internal and public IPv4 address
 7. Deploy Linux based Compute Engine Instance
+8. Create VPC firewall rules 
 
 **Running the Terraform plan**
-Make sure to adjust the Google Cloud project in the variables.tf file prior to deploying. 
+Make sure to adjust the Google Cloud project in the variables.tf file prior to deploying and change the "awesomename" placeholder to something Awesome ;) 
 
 Run the Terraform plan:
 - terraform init
