@@ -3,7 +3,7 @@ Deploy Compute Engine instances with security in mind with Terraform. The Terraf
 
 The direct attached static IPv4 address is for testing purpose. It's recommend to not expose Compute Engine instances direcly to the internet, but placed behind a load balancer.
 
-**What the Terraform does?**
+**What the Terraform plan does?**
 1. Create VPC Network
 2. Add subnet to VPC
 3. Create Service Account
