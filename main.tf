@@ -25,7 +25,7 @@ resource "google_project_service" "service_networking" {
 resource "google_compute_network" "vpc_network" {
   name                            = var.local_vpc_awesomename_network_name
   project                         = var.gcp_project_id
-  delete_default_routes_on_create = false
+  delete_default_routes_on_create = true
   auto_create_subnetworks         = false
 }
 
