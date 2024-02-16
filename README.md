@@ -1,5 +1,5 @@
 # Deploy Google Cloud Compute Engine with hardened Security 
-Deploy a hardened Compute Engine instance on Google Cloud with security in mind and using Terraform for deployment. The Terraform script has been set up to be deployed on its own, meaning an empty Google Cloud project.
+Deploy a hardened Compute Engine instance on Google Cloud with security in mind and using Terraform for deployment. The Terraform script has been set up to be deployed on its own, meaning in an empty Google Cloud project.
 
 The direct-attached static IPv4 address is for testing purposes. It's recommended not to expose Compute Engine instances directly to the internet but to place them behind a load balancer.
 
