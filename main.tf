@@ -96,7 +96,7 @@ resource "google_compute_instance" "awesomename" {
 
   boot_disk {
     initialize_params {
-      image = "debian-11-bullseye-v20230306"
+      image = "debian-12-bookworm-v2024021"
       type  = "pd-ssd"
       size  = "30"
     }
