@@ -6,9 +6,9 @@ The direct-attached static IPv4 address is for testing purposes. It's recommende
 **What the Terraform plan does?**
 1. Create VPC Network
 2. Add subnet to VPC
-3. Create Service Account
-4. Add ServiceAccount Role to created Service Account
-5. Assign minimum required Scope to Service Account
+3. Create a dedicated Service Account (Limited permissions)
+4. Add ServiceAccount Role to create Service Account
+5. Assign the minimum required Scope to Service Account
 6. Reserve static internal and public IPv4 address
 7. Deploy Linux based Compute Engine Instance
 8. Create VPC firewall rules 
